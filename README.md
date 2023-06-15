@@ -75,7 +75,7 @@ export TURTLEBOT3_MODEL=burger
 roslaunch turtlebot3_gazebo turtlebot3_world.launch
 ```
 
-This C++ file. It subscribes to the robot's pose information and a goal location, calculates the linear and angular velocities required to reach the goal, and publishes the velocity commands to the robot. The robot keeps moving until it reaches the goal position or the distance tolerance is met.
+Run below C++ file. It subscribes to the robot's pose information and a goal location, calculates the linear and angular velocities required to reach the goal, and publishes the velocity commands to the robot. The robot keeps moving until it reaches the goal position or the distance tolerance is met.
 ```
 rosrun coding-test2 gotogoal
 ```
@@ -94,7 +94,7 @@ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/map.yaml
 ```
 
-This code defines a class called GoalSubscriber that subscribes to a goal location and sends the goal position to the "move_base" action server for navigation. The goal location is received as an Int8 message, and based on the goal number, a target pose is set. The robot moves towards the goal and the success or failure of reaching the goal is printed.
+The below C++ code defines a class called GoalSubscriber that subscribes to a goal location and sends the goal position to the "move_base" action server for navigation. The goal location is received as an Int8 message, and based on the goal number, a target pose is set. The robot moves towards the goal and the success or failure of reaching the goal is printed.
 
 ```
 rosrun coding-test2 movebase_goal
