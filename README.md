@@ -46,5 +46,50 @@ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/map
 5. Click the 2D Nav Goal button in the RViz menu.
 6. Click on the map to set the destination of the robot and drag the green arrow toward the direction where the robot will be facing.
 
-![alt text](https://github.com/alam121/coding-test2/blob/main/q2_5.JPG =250x250)
+![alt text](https://github.com/alam121/coding-test2/blob/main/q2_5.JPG)
+
+# For b)
+
+I did this task using two different approach
+
+1) using PID by subsribing to odom data: 
+for this
+
+```
+export TURTLEBOT3_MODEL=burger
+roslaunch turtlebot3_gazebo turtlebot3_world.launch
+```
+
+This C++ file. It subscribes to the robot's pose information and a goal location, calculates the linear and angular velocities required to reach the goal, and publishes the velocity commands to the robot. The robot keeps moving until it reaches the goal position or the distance tolerance is met.
+```
+rosrun turtlebot3_gazebo gotogoal
+```
+To publish the goal location code i.e. 1,2,3. This asks for user of a number from 1-3, and publishes in the topic
+
+```
+rosrun turtlebot3_gazebo goalpub
+```
+
+2) The second approach i used was to publish the data to movebase goal that then moves the robot using the ROS navigation
+for this:
+
+```
+export TURTLEBOT3_MODEL=burger
+roslaunch turtlebot3_gazebo turtlebot3_world.launch
+roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/map.yaml
+```
+
+This code defines a class called GoalSubscriber that subscribes to a goal location and sends the goal position to the "move_base" action server for navigation. The goal location is received as an Int8 message, and based on the goal number, a target pose is set. The robot moves towards the goal and the success or failure of reaching the goal is printed.
+
+```
+rosrun turtlebot3_gazebo movebase_goal
+
+```
+To publish the goal location to ask the user to type the goal location code
+```
+rosrun turtlebot3_gazebo goalpub
+```
+
+![alt text](https://github.com/alam121/coding-test2/blob/main/q2_6.JPG)
+
 
