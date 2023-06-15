@@ -45,3 +45,6 @@ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/map
 4. Launch keyboard teleoperation node to precisely locate the robot on the map.
 5. Click the 2D Nav Goal button in the RViz menu.
 6. Click on the map to set the destination of the robot and drag the green arrow toward the direction where the robot will be facing.
+
+![alt text](https://github.com/alam121/coding-test2/blob/main/q2_5.JPG)
+
