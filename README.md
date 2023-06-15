@@ -14,30 +14,30 @@ should not navigate the robot. You can choose your own goal locations inside the
 sure that the goal locations are inside the map.
 
 # For a)
-'''
+```
 export TURTLEBOT3_MODEL=burger
 roslaunch turtlebot3_gazebo turtlebot3_world.launch
-'''
+```
 
 Create 2D map using gmapping (please ensure that the packages are installed)
-'''
+```
 roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
-'''
+```
 Move the robot around using teleop so the map is accurate
-'''
+```
 roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
-'''
+```
 
 Save the map 
 
-'''
+```
 rosrun map_server map_saver -f ~/map
-'''
+```
 
 For Navigation after lanching empty world:
-'''
+```
 roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/map.yaml
-'''
+```
 
 1. Click the 2D Pose Estimate button in the RViz menu.
 2. Click on the map where the actual robot is located and drag the large green arrow toward the direction where the robot is facing.
