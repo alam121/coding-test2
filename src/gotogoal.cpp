@@ -22,16 +22,16 @@ public:
         int goal_number = data->data;
         nav_msgs::Odometry goal_pose;
         if (goal_number == 1) {
-            goal_pose.pose.pose.position.x = 1;
-            goal_pose.pose.pose.position.y = 1;
+            goal_pose.pose.pose.position.x = -1;
+            goal_pose.pose.pose.position.y = 0;
         }
         else if (goal_number == 2) {
-            goal_pose.pose.pose.position.x = 2;
+            goal_pose.pose.pose.position.x = -3;
             goal_pose.pose.pose.position.y = 0;
         }
         else if (goal_number == 3) {
-            goal_pose.pose.pose.position.x = 3;
-            goal_pose.pose.pose.position.y = 1;
+            goal_pose.pose.pose.position.x = 2;
+            goal_pose.pose.pose.position.y = 2;
         }
         else {
             ROS_INFO("Invalid goal number. Robot will not navigate.");
