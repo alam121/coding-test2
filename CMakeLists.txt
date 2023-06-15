@@ -60,6 +60,9 @@ target_link_libraries(gotogoal ${catkin_LIBRARIES})
 add_executable(goalpub src/goalpub.cpp)
 target_link_libraries(goalpub ${catkin_LIBRARIES})
 
+add_executable(movebase_goal src/movebase_goal.cpp)
+target_link_libraries(movebase_goal ${catkin_LIBRARIES})
+
 ################################################################################
 # Install
 ################################################################################
